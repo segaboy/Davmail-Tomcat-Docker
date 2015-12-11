@@ -1,4 +1,4 @@
-FROM tomcat:8.0
+FROM tomcat:latest
 MAINTAINER Dean Howell
 
 RUN groupadd -r davmail
