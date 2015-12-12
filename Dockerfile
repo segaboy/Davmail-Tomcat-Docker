@@ -1,13 +1,13 @@
-FROM tomcat:latest
+FROM tomcat:8.0
 MAINTAINER Dean Howell
 
 RUN groupadd -r davmail
 RUN useradd -r -g davmail davmail
 
-RUN echo '<role rolename="manager-gui"/>' >> \
+RUN printf '<role rolename="manager-gui"/>' >> \
   /usr/local/conf/tomcat-users.xml
 
-RUN echo '<user username="davmail" password="davmail" roles="manager-gui"/>' \
+RUN printf '<user username="davmail" password="davmail" roles="manager-gui"/>' \
   >> /usr/local/conf/tomcat-users.xml
 
 RUN cd /usr/local/tomcat/webapps/
